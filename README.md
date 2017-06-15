@@ -1,1 +1,1 @@
-# 用于LonelyFool ROM Tools检查更新
+# 用于LonelyFool ROM Tools付费验证
