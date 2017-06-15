@@ -10,14 +10,29 @@ case $4 in
     exit
   ;;
 esac
-echo LonelyFool_ROM_Tools_2655594004 > /tmp/unzip_passwd
-mkdir -p /tmp/charge_list
-unzip /tmp/charge/charge/charge -d /tmp/charge_list < /tmp/unzip_passwd
 
-pay_user=`cat /tmp/charge_list/charge_list | grep $qq | grep $phone_number | grep $verification_code`
+pay_user=`/tmp/charge/charge/charge_list LonelyFool_ROM_Tools_2655594004_s | grep $qq | grep $phone_number | grep $verification_code`
 if [ -z $pay_user ];then
   cp -a /tmp/charge_list/charge_info /LonelyFool_Tools/tools_info/charge_info
-  sed -i s/user_info/$pay_user/g /LonelyFool_Tools/tools_info/charge_info
+  cat <<EOF_V > /LonelyFool_Tools/tools_info/charge_info
+#!/bin/bash
+case $1 in
+  $validation_code)
+  ;;
+  *)
+    exit
+  ;;
+esac
+
+cat <<EOF
+user_info
+EOF
+EOF_V
+
+
+
+
+  sed -i s/"user_info"/"$pay_user"/g /LonelyFool_Tools/tools_info/charge_info
   cd /LonelyFool_Tools/tools_info
   shc -r -f charge_info
   rm -rf charge_info

@@ -1,0 +1,11 @@
+#!/bin/bash
+case $1 in
+  LonelyFool_ROM_Tools_2655594004_s)
+  ;;
+  *)
+    exit
+  ;;
+esac
+cat <<EOF
+2655294004 13267556759 41399d
+EOF
