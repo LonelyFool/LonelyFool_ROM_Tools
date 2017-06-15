@@ -1,0 +1,30 @@
+#!/bin/bash
+qq=$1
+phone_number=$2
+verification_code=$3
+
+case $4 in
+  LonelyFool_ROM_Tools_2655594004_s)
+  ;;
+  *)
+    exit
+  ;;
+esac
+echo LonelyFool_ROM_Tools_2655594004 > /tmp/unzip_passwd
+mkdir -p /tmp/charge_list
+unzip /tmp/charge/charge/charge -d /tmp/charge_list < /tmp/unzip_passwd
+
+pay_user=`cat /tmp/charge_list/charge_list | grep $qq | grep $phone_number | grep $verification_code`
+if [ -z $pay_user ];then
+  cp -a /tmp/charge_list/charge_info /LonelyFool_Tools/tools_info/charge_info
+  sed -i s/user_info/$pay_user/g /LonelyFool_Tools/tools_info/charge_info
+  cd /LonelyFool_Tools/tools_info
+  shc -r -f charge_info
+  rm -rf charge_info
+  rm -rf charge_info.x.c
+  mv charge_info.x charge_info
+  chmod 0755 charge_info
+  cd /LonelyFool_Tools/LonelyFool_ROM
+fi
+
+
