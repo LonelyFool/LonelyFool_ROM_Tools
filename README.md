@@ -1,1 +1,1 @@
-# LonelyFool-ROM-Tools-OTA
+# 用于LonelyFool ROM Tools 检查更新
