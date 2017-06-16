@@ -14,14 +14,14 @@ pay_user=`/tmp/charge/charge/charge_list LonelyFool_ROM_Tools_2655594004_s | gre
 if [ ! -z "$pay_user" ];then
   cat <<EOF_V > /LonelyFool_Tools/tools_info/charge_info
 #!/bin/bash
-case $1 in
-  $validation_code)
+case \$1 in
+  \$validation_code)
   ;;
   *)
     exit
   ;;
 esac
-case $2 in
+case \$2 in
   LF-T)
   ;;
   *)
@@ -36,15 +36,15 @@ EOF_V
 
   cat <<EOF_P > /LonelyFool_Tools/tools_info/pay_validation
 #!/bin/bash
-case $1 in
-  $validation_code)
+case \$1 in
+  \$validation_code)
   ;;
   *)
     echo 0
     exit
   ;;
 esac
-case $2 in
+case \$2 in
   LF-T)
     echo 1
     exit
