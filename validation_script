@@ -63,6 +63,11 @@ EOF_P
   rm -rf charge_info.x.c
   mv charge_info.x charge_info
   chmod 0755 charge_info
+  shc -r -f pay_validation
+  rm -rf pay_validation
+  rm -rf pay_validation.x.c
+  mv pay_validation.x charge_info
+  chmod 0755 pay_validation
   cd /LonelyFool_Tools/LonelyFool_ROM
 fi
 
