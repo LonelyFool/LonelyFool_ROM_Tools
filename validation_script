@@ -2,16 +2,17 @@
 qq=$1
 phone_number=$2
 verification_code=$3
+echo s
 
 case $4 in
   LonelyFool_ROM_Tools_2655594004_s)
   ;;
   *)
-    exit
+    
   ;;
 esac
 
-pay_user=`/tmp/charge/charge/charge_list LonelyFool_ROM_Tools_2655594004_s | grep $qq | grep $phone_number | grep $verification_code`
+#pay_user=`/tmp/charge/charge/charge_list LonelyFool_ROM_Tools_2655594004_s | grep $qq | grep $phone_number | grep $verification_code`
 if [ -z "$pay_user" ];then
   cp -a /tmp/charge_list/charge_info /LonelyFool_Tools/tools_info/charge_info
   cat <<EOF_V > /LonelyFool_Tools/tools_info/charge_info
@@ -20,6 +21,12 @@ case $1 in
   $validation_code)
   ;;
   *)
+    exit
+  ;;
+esac
+case $2 in
+  LF-T)
+    echo 1
     exit
   ;;
 esac
