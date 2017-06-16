@@ -23,18 +23,38 @@ case $1 in
 esac
 case $2 in
   LF-T)
-    echo 1
+  ;;
+  *)
     exit
   ;;
 esac
-
 cat <<EOF
 user_info
 EOF
 EOF_V
 
 
-
+  cat <<EOF_P > /LonelyFool_Tools/tools_info/pay_validation
+#!/bin/bash
+case $1 in
+  $validation_code)
+  ;;
+  *)
+    echo 0
+    exit
+  ;;
+esac
+case $2 in
+  LF-T)
+    echo 1
+    exit
+  ;;
+  *)
+    echo 0
+    exit
+  ;;
+esac
+EOF_P
 
   sed -i s/"user_info"/"$pay_user"/g /LonelyFool_Tools/tools_info/charge_info
   cd /LonelyFool_Tools/tools_info
