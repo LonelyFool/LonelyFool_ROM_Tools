@@ -35,7 +35,7 @@ cp -a /tmp/NFE/NFE/NFE_function_script /LonelyFool_Tools/script/NFE_function_scr
 chmod 0755 /LonelyFool_Tools/script/NFE_function_script
 fi
 if [ open_beta = 1 ];then
-  cat <<EOF_NFE_OPEN > /LonelyFool_Tools/tools_info/open_beta $validation_code LF-T
+  cat <<EOF_NFE_OPEN > /LonelyFool_Tools/tools_info/open_beta
 #!/bin/bash
 case \$1 in
   \$validation_code)
