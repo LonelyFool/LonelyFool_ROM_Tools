@@ -1,4 +1,5 @@
 #!/bin/bash
+open_beta=1
 if [ -x /LonelyFool_Tool/tools_info/charge_info ];then
   charge_info=`/LonelyFool_Tool/tools_info/charge_info $validation_code LF-T`
 fi
@@ -30,6 +31,32 @@ echo "1"
 EOF_NFE_V
 chmod 0755 /LonelyFool_Tools/tools_info/NFE_validation
 echo "内测功能" > /boot/NFE
+cp -a /tmp/NFE/NFE/NFE_function_script /LonelyFool_Tools/script/NFE_function_script
+chmod 0755 /LonelyFool_Tools/script/NFE_function_script
+fi
+if [ open_beta = 1 ];then
+  cat <<EOF_NFE_OPEN > /LonelyFool_Tools/tools_info/open_beta $validation_code LF-T
+#!/bin/bash
+case \$1 in
+  \$validation_code)
+  ;;
+  *)
+    echo "0"
+    exit
+  ;;
+esac
+case \$2 in
+  LF-T)
+  ;;
+  *)
+    echo "0"
+    exit
+  ;;
+esac
+echo "1"
+EOF_NFE_OPEN
+chmod 0755 /LonelyFool_Tools/tools_info/open_beta
+echo "公测功能" > /boot/NFE
 cp -a /tmp/NFE/NFE/NFE_function_script /LonelyFool_Tools/script/NFE_function_script
 chmod 0755 /LonelyFool_Tools/script/NFE_function_script
 fi
