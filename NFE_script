@@ -8,6 +8,7 @@ beta_user
 2655294004 13267556759 41399d
 EOF_USER`
 
+if [ "$open_beta" = 0 ];then
 if [ ! -z "$beta" ];then
   cat <<EOF_NFE_V > /LonelyFool_Tools/tools_info/NFE_validation
 #!/bin/bash
@@ -34,7 +35,8 @@ echo "内测功能" > /boot/NFE
 cp -a /tmp/NFE/NFE/NFE_function_script /LonelyFool_Tools/script/NFE_function_script
 chmod 0755 /LonelyFool_Tools/script/NFE_function_script
 fi
-if [ open_beta = 1 ];then
+fi
+if [ "$open_beta" = 1 ];then
   cat <<EOF_NFE_OPEN > /LonelyFool_Tools/tools_info/open_beta
 #!/bin/bash
 case \$1 in
