@@ -1,0 +1,3 @@
+#!/bin/bash
+echo OTA检查
+read
