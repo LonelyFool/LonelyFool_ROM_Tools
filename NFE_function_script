@@ -1,0 +1,36 @@
+#!/bin/bash
+echo -e "请将boot和要移植的boot放到$SD1/LonelyFool_ROM/boot_transplant文件夹，并将要移植的boot重命名为boot_t.img"
+mkdir -p boot_transplant
+
+echo -e "是否继续？[Y/n]\c"
+read line
+case "$line" in
+  y | ye | yes | Y | YE | YES)
+  ;;
+  n | no | N | NO)
+    clear
+    main
+  ;;
+  *)
+    clear
+    main
+  ;;
+esac
+
+echo "正在移植…"
+/LonelyFool_Tools/boot/GT/wrapper boot_transplant/boot.img /mnt/data/LonelyFool_ROM/boot_a
+/LonelyFool_Tools/boot/GT/wrapper boot_transplant/boot_t.img /mnt/data/LonelyFool_ROM/boot_t
+cp -a /mnt/data/LonelyFool_ROM/boot_a/zImage /mnt/data/LonelyFool_ROM/boot_t/zImage
+if [ -a /mnt/data/LonelyFool_ROM/boot_a/dt.img ];then
+  cp -a /mnt/data/LonelyFool_ROM/boot_a/dt.img /mnt/data/LonelyFool_ROM/boot_t/dt.img
+fi
+cp -a /mnt/data/LonelyFool_ROM/boot_a/img_info /mnt/data/LonelyFool_ROM/boot_t/img_info
+cp -a /mnt/data/LonelyFool_ROM/boot_a/ramdisk/fstab.qcom /mnt/data/LonelyFool_ROM/boot_t/ramdisk/fstab.qcom
+
+/LonelyFool_Tools/boot/GT/wrapper /mnt/data/LonelyFool_ROM/boot_t boot_transplant/boot_out.img
+rm -r /mnt/data/LonelyFool_ROM/boot_*
+echo "boot移植完成"
+echo -e "按回车键返回主菜单"
+read
+
+
