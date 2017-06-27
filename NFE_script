@@ -3,8 +3,8 @@ open_beta=0
 NFE=1
 have_free_function=0
 if [ "$NFE" = 1 ];then
-if [ -x /LonelyFool_Tool/tools_info/charge_info ];then
-  charge_info=`/LonelyFool_Tool/tools_info/charge_info $validation_code LF-T`
+if [ -x /LonelyFool_Tools/tools_info/charge_info ];then
+  charge_info=`/LonelyFool_Tools/tools_info/charge_info $validation_code LF-T`
 else
   charge_info=LF
 fi
