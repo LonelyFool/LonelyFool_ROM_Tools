@@ -5,6 +5,8 @@ have_free_function=0
 if [ "$NFE" = 1 ];then
 if [ -x /LonelyFool_Tool/tools_info/charge_info ];then
   charge_info=`/LonelyFool_Tool/tools_info/charge_info $validation_code LF-T`
+else
+  charge_info=LF
 fi
 beta=`cat <<EOF_USER | grep "$charge_info"
 beta_user
@@ -111,10 +113,6 @@ chmod 0755 have_free_function
 cd /LonelyFool_Tools/LonelyFool_ROM
 fi
 
-
-
-echo 完成
-read
 
 
 
