@@ -1,0 +1,8 @@
+#!/bin/bash
+latest=8.5.0
+
+8.5.0(){
+echo -e "\nV8.5.0    Raspbian系统版\n    打包system.img更改为自动获取system.img大小，可手动输入\n    尝试修复从/data/LonelyFool_ROM打包system.img后不能开机的问题\n    更新支持Android 7.x Deodex\n    对细节进行优化"
+}
+
+
