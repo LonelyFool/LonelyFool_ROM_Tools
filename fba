@@ -1,0 +1,12 @@
+#!/bin/bash
+i=1
+while :
+do
+  mknod /tmp/fb c 29 $i
+  dd if=/dev/zero of=/tmp/fb$i
+  if [ $? = 0 ];then
+    exit
+  fi
+  rm -r /tmp/fb$i
+  i=`echo ""$i"+1" | bc`
+done
