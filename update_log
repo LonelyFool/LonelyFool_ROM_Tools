@@ -1,0 +1,18 @@
+#!/bin/bash
+latest_version=9.1.0
+
+9.1.0(){
+echo -e "\nV9.1.0    Raspbian系统版\n    修复img打包功能\n    修复从/data/LonelyFool_ROM打包system.img闪退的BUG\n    细节优化"
+}
+9.0.0(){
+echo -e "\nV9.0.0    Raspbian系统版\n    去除odex功能\n    去除deodex功能\n    优化自动生成刷机脚本功能\n    修复无法获取system分区大小的BUG\n    修复从/data/LonelyFool_ROM打包system.img后不能开机的BUG\n    修复有时工具打开慢的BUG\n    修复Android8.0无法启动工具的BUG\n    添加OPPO ozip转zip功能"
+}
+8.5.0(){
+echo -e "\nV8.5.0    Raspbian系统版\n    打包system.img更改为自动获取system.img大小，可手动输入\n    尝试修复从/data/LonelyFool_ROM打包system.img后不能开机的问题\n    更新支持Android 7.x Deodex\n    对细节进行优化"
+}
+8.1.0(){
+echo -e "\nV8.1.0    Raspbian系统版\n    修复上一版高通和MTK679系列cpu boot解包问题\n    修复库文件依赖分析功能"
+}
+8.0.0(){
+echo -e "\nV8.0.0    Raspbian系统版\n    加入OTA检查\n    更新dat转img程序\n    更新simg转dat程序，测试转换成功\n    优化从/data/LonelyFool_ROM打包system.img功能\n    修改查找LonelyFool_ROM文件夹逻辑\n    加入库文件依赖分析功能（付费功能），能用于移植bug修复，例如相机bug\n    加入log文件分析功能（付费功能）"
+}
