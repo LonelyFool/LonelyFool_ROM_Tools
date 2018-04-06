@@ -1,6 +1,10 @@
 #!/bin/bash
-latest_version=9.5.0
+latest_version=10.0.0
 
+
+10.0.0(){
+echo -e "\nV10.0.0    Raspbian系统版\n    优化解system.img功能\n    优化打包img功能\n    优化文件夹对比功能\n    优化ozip转zip功能\n    添加解vendor.new.dat功能\n    添加合并odex功能，支持Android Oreo\n    添加对vendor.new.dat的操作功能"
+}
 
 9.5.0(){
 echo -e "\nV9.5.0    Raspbian系统版\n    添加dat.br转img功能\n    添加dat压缩为dat.br功能\n    添加dat.br解压为dat功能\n    添加对file_contexts.bin的支持\n    修复有时不能正常退出的BUG\n    细节优化"
