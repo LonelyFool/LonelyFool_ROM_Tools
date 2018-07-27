@@ -1,1 +1,1 @@
-# 用于LonelyFool ROM Tools Linux系统版OTA
+# 用于LonelyFool ROM Tools Linux系统版NFE
