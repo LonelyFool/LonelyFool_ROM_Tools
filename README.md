@@ -1,1 +1,1 @@
-# 用于LonelyFool ROM Tools付费验证
+# 用于LonelyFool ROM Tools Linux系统版OTA
