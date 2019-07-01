@@ -2,5 +2,5 @@
 export PATH=/data/data/com.LFRT/linux/bin:/data/data/com.LFRT/linux/sbin:/data/data/com.LFRT/linux/usr/bin:/data/data/com.LFRT/linux/usr/sbin:$PATH
 export LD_LIBRARY_PATH=/data/data/com.LFRT/linux/lib
 
-/data/data/com.LFRT/charge/LonelyFool_ROM_Tools-Charge/validation_script_android_gui1 "$@"
+/data/data/com.LFRT/charge/LonelyFool_ROM_Tools-Charge/validation_script_android_gui1 "$@" &>&1
 
